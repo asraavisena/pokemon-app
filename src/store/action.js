@@ -70,11 +70,9 @@ export function fetchPokemons() {
 
     try {
       const pokeData = await axios.get(url);
-      console.log(pokeData.data);
       dispatch(setPokeData(pokeData.data.results));
       dispatch(setNextUrl(pokeData.data.next));
       dispatch(setPrevUrl(pokeData.data.previous));
-      console.log(pokeData.data.prev, "prev");
     } catch (err) {
       dispatch(setError(err));
     } finally {

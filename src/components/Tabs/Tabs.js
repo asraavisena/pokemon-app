@@ -120,7 +120,7 @@ export default function Tabs(props) {
                   className={openTab === "Moves" ? "block" : "hidden"}
                   id="link4"
                 >
-                  <MovesTab />
+                  <MovesTab moves={props.moves} />
                 </div>
               </div>
             </div>

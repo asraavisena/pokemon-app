@@ -10,7 +10,6 @@ export default function Home() {
     pokeData: pokemons,
     error,
     url,
-    nextUrl,
     prevUrl,
   } = useSelector((state) => ({
     isLoading: state.isLoading,
@@ -38,10 +37,6 @@ export default function Home() {
     console.log("next");
     dispatch(setUrlNext());
   }
-
-  console.log(prevUrl);
-  console.log(nextUrl);
-
   //   console.log(pokemons);
 
   return (

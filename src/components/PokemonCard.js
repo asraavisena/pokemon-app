@@ -1,11 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import ColorsType from "./ColorsType";
 import pokeball from "../public/pokeball-white.png";
 import Tabs from "./Tabs/Tabs";
 
 export default function PokemonCard(props) {
+  const history = useHistory();
   const [details, setDetails] = useState({});
+  const [details2, setDetails2] = useState({});
+  const [evolution, setEvolution] = useState({});
+
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,6 +18,14 @@ export default function PokemonCard(props) {
       .get(props.pokemon.url)
       .then(({ data }) => {
         setDetails(data);
+        return axios.get(data.species.url);
+      })
+      .then(({ data }) => {
+        setDetails2(data);
+        return axios.get(data.evolution_chain.url);
+      })
+      .then(({ data }) => {
+        setEvolution(data);
       })
       .catch((err) => {
         console.log(err);
@@ -22,7 +35,6 @@ export default function PokemonCard(props) {
       });
   }, [props.pokemon]);
 
-  //   console.log(isLoading);
   let about = {};
   if (!isLoading) {
     about = {
@@ -33,7 +45,11 @@ export default function PokemonCard(props) {
     };
   }
 
-  //   console.log(details);
+  function seeDetails() {
+    history.push(`/pokemon-details/${details.id}`);
+  }
+
+  // console.log(details);
 
   return (
     <>
@@ -50,7 +66,12 @@ export default function PokemonCard(props) {
                 details.types.length === 1 ? "mb-10" : "mb-2"
               }`}
             >
-              <p className="text-white font-bold sm:text-3xl capitalize">
+              <p
+                className="text-white font-bold sm:text-3xl capitalize cursor-pointer"
+                onClick={() => {
+                  seeDetails();
+                }}
+              >
                 {props.pokemon.name}
               </p>
 
@@ -105,6 +126,7 @@ export default function PokemonCard(props) {
               about={about}
               stats={details.stats}
               evolutions={details.forms}
+              moves={details.moves}
             />
           </div>
         </div>

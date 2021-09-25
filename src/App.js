@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Home from "./pages/Home";
 import "./App.css";
+import PokemonDetails from "./pages/PokemonDetails";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/pokemon-details/:id">
+            <PokemonDetails />
           </Route>
         </Switch>
       </Router>
