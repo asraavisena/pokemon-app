@@ -7,7 +7,7 @@ export default function AboutTab(props) {
   const toFeet = Math.floor(heightInCm * 0.0328 * 100);
   const toInches = Math.round(heightInCm * 0.3937 * 100);
   return (
-    <div>
+    <div className="pb-14">
       <table className="table-fixed">
         <thead>
           <tr>
@@ -18,7 +18,7 @@ export default function AboutTab(props) {
         <tbody>
           <tr>
             <td className="text-gray-400 font-semibold">Species</td>
-            <td className="text-gray-600 font-semibold">
+            <td className="text-gray-600 font-semibold capitalize">
               {props.about.species}
             </td>
           </tr>
@@ -40,7 +40,7 @@ export default function AboutTab(props) {
               {props.about.abilities.map((el, index) => {
                 return (
                   <span
-                    className="text-gray-600 font-semibold"
+                    className="text-gray-600 font-semibold capitalize"
                     key={index + props.about.name + el.ability.name}
                   >
                     {el.ability.name}&ensp;

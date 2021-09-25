@@ -33,14 +33,14 @@ export default function PokemonCard(props) {
     };
   }
 
-  //   console.log(details);
+  console.log(details);
 
   return (
     <>
       {isLoading ? (
         <div>Fetch Data</div>
       ) : (
-        <div className="max-w-m rounded overflow-hidden shadow-lg">
+        <div className="max-w-m rounded overflow-hidden shadow-lg max-full">
           <div
             style={{ backgroundColor: ColorsType[details.types[0].type.name] }}
           >
@@ -94,7 +94,11 @@ export default function PokemonCard(props) {
             </div>
           </div>
           <div className="pt-16 rounded-t-2xl">
-            <Tabs about={about} stats={details.stats} />
+            <Tabs
+              about={about}
+              stats={details.stats}
+              evolutions={details.forms}
+            />
           </div>
         </div>
       )}

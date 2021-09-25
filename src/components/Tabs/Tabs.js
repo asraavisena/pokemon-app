@@ -8,19 +8,19 @@ export default function Tabs(props) {
   const [openTab, setOpenTab] = useState("About");
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className="flex mb-0 list-none  pt-3 pb-4 flex-row"
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a
                 className={
-                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  "text-xs font-semibold capitalize px-3 py-3 rounded block leading-normal " +
                   (openTab === "About"
-                    ? "text-white bg-pink-600"
-                    : "text-pink-600 bg-white")
+                    ? "text-black border-b-4 border-gray-600 "
+                    : "text-grey-50 opacity-50 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -36,10 +36,10 @@ export default function Tabs(props) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a
                 className={
-                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
                   (openTab === "Stats"
-                    ? "text-white bg-pink-600"
-                    : "text-pink-600 bg-white")
+                    ? "text-black border-b-4 border-gray-600"
+                    : "text-grey-50 opacity-50 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -55,10 +55,10 @@ export default function Tabs(props) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a
                 className={
-                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
                   (openTab === "Evolution"
-                    ? "text-white bg-pink-600"
-                    : "text-pink-600 bg-white")
+                    ? "text-black border-b-4 border-gray-600"
+                    : "text-grey-50 opacity-50 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -74,10 +74,10 @@ export default function Tabs(props) {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a
                 className={
-                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
                   (openTab === "Moves"
-                    ? "text-white bg-pink-600"
-                    : "text-pink-600 bg-white")
+                    ? "text-black border-b-4 border-gray-600"
+                    : "text-grey-50 opacity-50 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -92,7 +92,7 @@ export default function Tabs(props) {
             </li>
           </ul>
 
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div

@@ -11,14 +11,17 @@
 }
 
 .left {
+    padding: 5px;
     background-color: #0f990f;
 }
 
 .left_50 {
+    padding: 5px;
     background-color: #ff0000;
 }
 
 .right {
+    padding: 5px;
     background-color: #9CA3AF;
     opacity: 0.3;
 }
