@@ -20,7 +20,7 @@ export default function PokemonCard(props) {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [props.pokemon]);
 
   //   console.log(isLoading);
   let about = {};
@@ -33,24 +33,24 @@ export default function PokemonCard(props) {
     };
   }
 
-  console.log(details);
+  //   console.log(details);
 
   return (
     <>
       {isLoading ? (
         <div>Fetch Data</div>
       ) : (
-        <div className="rounded overflow-hidden shadow-lg  ">
+        <div className="rounded-xl overflow-hidden shadow-lg">
           <div
             style={{ backgroundColor: ColorsType[details.types[0].type.name] }}
             className="sm:block"
           >
             <div
-              className={`sm:flex flex-col block mx-5 pt-5 md:mb-24  lg:mb-none ${
+              className={`sm:flex flex-col block mx-5 pt-5 md:mb-24 lg:mb-none ${
                 details.types.length === 1 ? "mb-10" : "mb-2"
               }`}
             >
-              <p className="text-white font-bold sm:text-3xl capitalize ">
+              <p className="text-white font-bold sm:text-3xl capitalize">
                 {props.pokemon.name}
               </p>
 
