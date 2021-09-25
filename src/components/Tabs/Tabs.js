@@ -8,16 +8,16 @@ export default function Tabs(props) {
   const [openTab, setOpenTab] = useState("About");
   return (
     <>
-      <div className="flex flex-wrap ">
+      <div className="flex flex-wrap">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none  pt-3 pb-4 flex-row"
+            className=" mb-0 list-none grid grid-cols-1  xl:grid-cols-4"
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px mr-2 last:mr-0 text-center">
               <a
                 className={
-                  "text-xs font-semibold capitalize px-3 py-3 rounded block leading-normal " +
+                  "text-xs font-semibold capitalize  py-3 rounded block leading-normal " +
                   (openTab === "About"
                     ? "text-black border-b-4 border-gray-600 "
                     : "text-grey-50 opacity-50 bg-white")

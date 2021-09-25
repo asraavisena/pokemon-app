@@ -28,8 +28,8 @@ export default function Home() {
   }
 
   return (
-    <div className=" my-10 relative text-gray-600 lg:block hidden mx-10 ">
-      <div className="grid grid-cols-4 max-w-full gap-3">
+    <div className=" my-10 relative text-gray-600 lg:block mx-7 ">
+      <div className="grid lg:grid-cols-4 sm:max-w-full gap-3 w-full grid-cols-2">
         {pokemons[0].map((pokemon, index) => {
           return <PokemonCard key={index + pokemon} pokemon={pokemon} />;
         })}

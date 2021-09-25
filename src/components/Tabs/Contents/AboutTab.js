@@ -7,7 +7,7 @@ export default function AboutTab(props) {
   const toFeet = Math.floor(heightInCm * 0.0328 * 100);
   const toInches = Math.round(heightInCm * 0.3937 * 100);
   return (
-    <div className="pb-14">
+    <div className="lg:pb-14">
       <table className="table-fixed">
         <thead>
           <tr>
