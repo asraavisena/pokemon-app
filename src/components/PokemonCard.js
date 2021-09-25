@@ -33,7 +33,7 @@ export default function PokemonCard(props) {
     };
   }
 
-  console.log(details);
+  //   console.log(details);
 
   return (
     <>
