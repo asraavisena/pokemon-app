@@ -1,0 +1,4 @@
+export const FETCH_POKEDATA = "FETCH/POKEDATA";
+export const FETCH_POKEDETAILS = "FETCH/FETCH_POKEDETAILS";
+export const SET_LOADING = "SET/LOADING";
+export const SET_ERROR = "SET/ERROR";
