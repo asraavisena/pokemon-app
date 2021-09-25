@@ -23,8 +23,14 @@ export default function PokemonCard(props) {
   }, []);
 
   //   console.log(isLoading);
-  if (isLoading) {
-    <p>Fetching data</p>;
+  let about = {};
+  if (!isLoading) {
+    about = {
+      species: details.species.name,
+      height: details.height,
+      weight: details.weight,
+      abilities: details.abilities,
+    };
   }
 
   console.log(details);
@@ -34,7 +40,7 @@ export default function PokemonCard(props) {
       {isLoading ? (
         <div>Fetch Data</div>
       ) : (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="max-w-m rounded overflow-hidden shadow-lg">
           <div
             style={{ backgroundColor: ColorsType[details.types[0].type.name] }}
           >
@@ -60,7 +66,10 @@ export default function PokemonCard(props) {
               <div className="flex flex-row">
                 {details.types.map((type) => {
                   return (
-                    <p className="inline-block bg-gray-100 bg-opacity-25 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 capitalize">
+                    <p
+                      key={props.pokemon.name + type.type.name}
+                      className="inline-block bg-gray-100 bg-opacity-25 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 capitalize"
+                    >
                       {type.type.name}
                     </p>
                   );
@@ -85,7 +94,7 @@ export default function PokemonCard(props) {
             </div>
           </div>
           <div className="pt-16 rounded-t-2xl">
-            <Tabs />
+            <Tabs about={about} stats={details.stats} />
           </div>
         </div>
       )}

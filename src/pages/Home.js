@@ -27,10 +27,6 @@ export default function Home() {
     return <p>Loading. Wait a moment</p>;
   }
 
-  //   console.log(pokemons[0], "list");
-
-  //   console.log(pokemons);
-
   return (
     <div className=" my-10 relative text-gray-600 lg:block hidden mx-40">
       <div className="grid grid-cols-4 max-w-full gap-3">
