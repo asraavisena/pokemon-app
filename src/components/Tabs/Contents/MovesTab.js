@@ -1,11 +1,17 @@
 import React from "react";
 
 export default function MovesTab(props) {
-  console.log(props.moves);
   return (
-    <div className="lg:pb-14 grid grid-cols-2">
-      {props.moves.slice(0, 10).map((el) => {
-        return <p className="text-gray-400 font-semibold ">{el.move.name}</p>;
+    <div className="lg:pb-12 grid grid-cols-2">
+      {props.moves.slice(0, 10).map((el, index) => {
+        return (
+          <p
+            key={index + el.move.name}
+            className="text-gray-400 font-semibold "
+          >
+            {el.move.name}
+          </p>
+        );
       })}
       <div></div>
       {/* <table className="table-fixed">

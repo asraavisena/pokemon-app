@@ -3,8 +3,8 @@ import StatsTabStyles from "./Styles/StatsTab.module.css";
 
 export default function StatsTab(props) {
   return (
-    <div>
-      <table className="table-fixed w-full">
+    <div className="">
+      <table className="table-fixed">
         <thead>
           <tr>
             <th className="w-6/12"></th>

@@ -11,10 +11,12 @@ export default function Tabs(props) {
       <div className="flex flex-wrap">
         <div className="w-full">
           <ul
-            className=" mb-0 list-none grid grid-cols-1  xl:grid-cols-4"
+            className={`mb-0 list-none grid grid-cols-1 ${
+              props.isDetails ? "lg:grid-cols-4" : "xl:grid-cols-4"
+            } `}
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0 text-center">
+            <li className="-mb-px last:mr-0 text-center">
               <a
                 className={
                   "text-xs font-semibold capitalize  py-3 rounded block leading-normal " +
@@ -33,7 +35,7 @@ export default function Tabs(props) {
                 About
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px last:mr-0 flex-auto text-center">
               <a
                 className={
                   "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
@@ -52,7 +54,7 @@ export default function Tabs(props) {
                 Base Stats
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px last:mr-0 flex-auto text-center">
               <a
                 className={
                   "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
@@ -71,7 +73,7 @@ export default function Tabs(props) {
                 Evolution
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px last:mr-0 flex-auto text-center">
               <a
                 className={
                   "text-xs font-semibold capitalize px-5 py-3 rounded block leading-normal " +
@@ -113,7 +115,7 @@ export default function Tabs(props) {
                   className={openTab === "Evolution" ? "block" : "hidden"}
                   id="link3"
                 >
-                  <EvolutionTab />
+                  <EvolutionTab evolve={props.evolve} />
                 </div>
 
                 <div

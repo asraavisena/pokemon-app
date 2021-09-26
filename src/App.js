@@ -13,7 +13,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/pokemon-details/:id">
+          <Route exact path="/pokemon-details/:name">
             <PokemonDetails />
           </Route>
         </Switch>

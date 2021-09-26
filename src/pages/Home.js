@@ -29,12 +29,10 @@ export default function Home() {
   }
 
   function prevButton() {
-    console.log("prev");
     dispatch(setUrlPrev());
   }
 
   function nextButton() {
-    console.log("next");
     dispatch(setUrlNext());
   }
   //   console.log(pokemons);

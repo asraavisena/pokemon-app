@@ -8,7 +8,6 @@ import Tabs from "./Tabs/Tabs";
 export default function PokemonCard(props) {
   const history = useHistory();
   const [details, setDetails] = useState({});
-  const [details2, setDetails2] = useState({});
   const [evolution, setEvolution] = useState({});
 
   const [isLoading, setLoading] = useState(true);
@@ -21,7 +20,6 @@ export default function PokemonCard(props) {
         return axios.get(data.species.url);
       })
       .then(({ data }) => {
-        setDetails2(data);
         return axios.get(data.evolution_chain.url);
       })
       .then(({ data }) => {
@@ -36,6 +34,7 @@ export default function PokemonCard(props) {
   }, [props.pokemon]);
 
   let about = {};
+  let evolve = {};
   if (!isLoading) {
     about = {
       species: details.species.name,
@@ -43,13 +42,21 @@ export default function PokemonCard(props) {
       weight: details.weight,
       abilities: details.abilities,
     };
+    evolve = {
+      1: evolution?.chain?.species?.name,
+      2: evolution?.chain?.evolves_to[0]?.species?.name,
+      3: evolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name,
+      // 4: evolution?.chain?.evolves_to[0]?.evolves_to[0]?.evolves_to[0]?.species
+      //   ?.name,
+    };
   }
 
   function seeDetails() {
-    history.push(`/pokemon-details/${details.id}`);
+    history.push(`/pokemon-details/${details.name}`);
   }
 
-  // console.log(details);
+  // console.log(evolve);
+  // console.log(evolution);
 
   return (
     <>
@@ -126,7 +133,9 @@ export default function PokemonCard(props) {
               about={about}
               stats={details.stats}
               evolutions={details.forms}
+              isDetails={false}
               moves={details.moves}
+              evolve={evolve}
             />
           </div>
         </div>
