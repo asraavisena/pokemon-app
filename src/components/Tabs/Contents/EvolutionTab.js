@@ -25,7 +25,7 @@ export default function EvolutionTab(props) {
                   onClick={() => {
                     seeDetails(props.evolve[key]);
                   }}
-                  className="text-gray-600 font-semibold capitalize cursor-pointer"
+                  className="hover:underline text-gray-600 font-semibold capitalize cursor-pointer"
                 >
                   {props.evolve[key]}
                 </td>

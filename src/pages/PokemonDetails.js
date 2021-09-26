@@ -58,7 +58,17 @@ export default function PokemonDetails() {
       ) : (
         <div className="sm:my-10 relative text-gray-600 lg:block sm:mx-32">
           <div className="flex flex-row my-2">
-            <h1 className="text-2xl font-bold mr-auto"> Pokedex</h1>
+            <h1 className="text-2xl font-bold mr-auto">
+              {" "}
+              Pokedex{" "}
+              {details.id < 10 ? (
+                <span>#00{details.id}</span>
+              ) : details.id < 99 ? (
+                <span>#0{details.id}</span>
+              ) : (
+                <span>#{details.id}</span>
+              )}
+            </h1>
             <button
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mx-2"
               onClick={history.goBack}

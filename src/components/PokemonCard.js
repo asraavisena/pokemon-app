@@ -103,7 +103,7 @@ export default function PokemonCard(props) {
                   return (
                     <p
                       key={props.pokemon.name + type.type.name}
-                      className="sm:inline-block bg-gray-100 bg-opacity-25 rounded-full sm:px-3 sm:py-1 sm:text-sm sm:font-semibold text-white mr-2 mb-2 sm:text-left  text-center capitalize"
+                      className="sm:inline-block bg-gray-100 bg-opacity-25 rounded-full sm:px-3 sm:py-1 sm:text-sm sm:font-semibold text-white mr-2 mb-2 sm:text-left  text-center capitalize "
                     >
                       {type.type.name}
                     </p>
@@ -112,14 +112,23 @@ export default function PokemonCard(props) {
               </div>
             </div>
 
-            <div className="lg:w-full lg:pb-0 sm:p-none sm:pb-10 sm:m-none  ">
+            <div
+              className="lg:w-full lg:pb-0 sm:p-none sm:pb-10 sm:m-none"
+              // style={{
+              //   backgroundImage: `url(${pokeball})`,
+              //   backgroundColor: " rgba(0, 0, 0, 0.1)",
+              //   backgroundSize: "40%",
+              //   backgroundRepeat: "no-repeat",
+              //   backgroundPosition: "right",
+              // }}
+            >
               <img
                 className="lg:w-64 sm:w-44 w-16 mx-auto relative z-40"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${details.id}.png`}
                 alt={`pokemon images`}
               />
               <img
-                className="lg:w-44 sm:w-44 w-16 sm:-mt-52 sm:ml-56 sm:relative z-0 ml-20 -mt-14"
+                className="object-right lg:w-44 sm:w-44 w-16 sm:-mt-52 sm:ml-56 sm:relative z-0 ml-20 -mt-14"
                 style={{
                   opacity: 0.2,
                 }}
@@ -128,7 +137,7 @@ export default function PokemonCard(props) {
               />
             </div>
           </div>
-          <div className="pt-16 rounded-t-2xl hidden lg:block">
+          <div className="md:pt-16 rounded-t-2xl hidden lg:block">
             <Tabs
               about={about}
               stats={details.stats}
