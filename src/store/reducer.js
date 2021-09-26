@@ -3,6 +3,10 @@ import {
   SET_LOADING,
   SET_ERROR,
   FETCH_POKEDETAILS,
+  NEXT_URL,
+  PREV_URL,
+  URL_NEXT,
+  URL_PREV,
 } from "./actionType";
 
 const initalState = {
@@ -11,6 +15,8 @@ const initalState = {
   isLoading: true,
   url: "https://pokeapi.co/api/v2/pokemon",
   pokeDetails: {},
+  nextUrl: "",
+  prevUrl: "",
 };
 
 export default function reducer(state = initalState, action) {
@@ -34,6 +40,26 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         pokeDetails: action.payload,
+      };
+    case NEXT_URL:
+      return {
+        ...state,
+        nextUrl: action.payload,
+      };
+    case PREV_URL:
+      return {
+        ...state,
+        prevUrl: action.payload,
+      };
+    case URL_NEXT:
+      return {
+        ...state,
+        url: state.nextUrl,
+      };
+    case URL_PREV:
+      return {
+        ...state,
+        url: state.prevUrl,
       };
     default:
       return state;

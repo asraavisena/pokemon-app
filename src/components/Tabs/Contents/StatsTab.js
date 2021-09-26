@@ -3,8 +3,8 @@ import StatsTabStyles from "./Styles/StatsTab.module.css";
 
 export default function StatsTab(props) {
   return (
-    <div>
-      <table className="table-fixed w-full">
+    <div className="">
+      <table className="table-fixed">
         <thead>
           <tr>
             <th className="w-6/12"></th>
@@ -16,7 +16,7 @@ export default function StatsTab(props) {
           {props.stats.map((el, index) => {
             return (
               <tr key={index + el.base_stat + el.stat.name}>
-                <td className="text-gray-400 font-semibold capitalize">
+                <td className="lg:text-sm xl:text-base text-gray-400 font-semibold capitalize">
                   {el.stat.name}
                 </td>
                 <td className="text-gray-600 font-semibold">{el.base_stat}</td>
@@ -40,18 +40,6 @@ export default function StatsTab(props) {
               </tr>
             );
           })}
-          {/* <tr>
-            <td className="text-gray-400 font-semibold">Species</td>
-          </tr>
-          <tr>
-            <td className="text-gray-400 font-semibold">Height</td>
-          </tr>
-          <tr>
-            <td className="text-gray-400 font-semibold">Weight</td>
-          </tr>
-          <tr>
-            <td className="text-gray-400 font-semibold">Abilities</td>
-          </tr> */}
         </tbody>
       </table>
     </div>
