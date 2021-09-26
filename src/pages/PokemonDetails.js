@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import ColorsType from "../components/ColorsType";
+import Loading from "../components/Loading/Loading";
 import Tabs from "../components/Tabs/Tabs";
 
 export default function PokemonDetails() {
@@ -54,7 +55,7 @@ export default function PokemonDetails() {
   return (
     <>
       {isLoading ? (
-        <div>Fetch Data</div>
+        <Loading />
       ) : (
         <div className="sm:my-10 relative text-gray-600 lg:block sm:mx-32">
           <div className="flex flex-row my-2">

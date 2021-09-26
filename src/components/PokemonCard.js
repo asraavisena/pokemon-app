@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import ColorsType from "./ColorsType";
 import pokeball from "../public/pokeball-white.png";
 import Tabs from "./Tabs/Tabs";
+import Loading from "./Loading/Loading";
 
 export default function PokemonCard(props) {
   const history = useHistory();
@@ -46,8 +47,6 @@ export default function PokemonCard(props) {
       1: evolution?.chain?.species?.name,
       2: evolution?.chain?.evolves_to[0]?.species?.name,
       3: evolution?.chain?.evolves_to[0]?.evolves_to[0]?.species?.name,
-      // 4: evolution?.chain?.evolves_to[0]?.evolves_to[0]?.evolves_to[0]?.species
-      //   ?.name,
     };
   }
 
@@ -55,13 +54,10 @@ export default function PokemonCard(props) {
     history.push(`/pokemon-details/${details.name}`);
   }
 
-  // console.log(evolve);
-  // console.log(evolution);
-
   return (
     <>
       {isLoading ? (
-        <div>Fetch Data</div>
+        <Loading />
       ) : (
         <div className="rounded-xl overflow-hidden shadow-lg">
           <div

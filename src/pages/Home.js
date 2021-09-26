@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Loading from "../components/Loading/Loading";
 import PokemonCard from "../components/PokemonCard";
 import { fetchPokemons, setUrlNext, setUrlPrev } from "../store/action";
 
@@ -25,7 +26,7 @@ export default function Home() {
   }, [url]);
 
   if (isLoading) {
-    return <p>Loading. Wait a moment</p>;
+    return <Loading />;
   }
 
   function prevButton() {
